@@ -14,3 +14,8 @@ uvicorn app:app --reload
 GREAR ANGULAR
 ng g s services/Nombre
 ng g c components/Nombre
+
+
+
+bootstrap
+npm i bootstrap
