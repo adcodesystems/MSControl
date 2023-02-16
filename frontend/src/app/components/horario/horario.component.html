@@ -1,1 +1,104 @@
-z
+<!-- <app-page-home></app-page-home>
+<br>
+<br>
+<br>
+<br>
+<div class="container ctn-p">
+  <div class="row">
+
+    <form>
+      <div class="form-group">
+        <label for="inputAddress">Nombre</label>
+        <input type="text" class="form-control"  [(ngModel)]="HorarioEntity.Nombre"
+        [ngModelOptions]="{standalone: true}"  id="inputAddress" placeholder="">
+      </div>
+
+
+
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+        data-whatever="@mdo">Agregar Horario</button>
+
+      <button type="button" class="btn btn-primary" (click)="Save()"
+        data-whatever="@mdo">Guardar</button>
+    </form>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Items</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Minuto</th>
+          <th scope="col">Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of HorarioEntity.data">
+          <td>{{d.Items}}</td>
+          <td>{{d.Hora}}</td>
+          <td>{{d.Minuto}}</td>
+          <td>{{d.NomTipoSecuenciaMarcacion}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Horario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="inputAddress">Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="HorarioDetallePopupEntity.NomTipoSecuenciaMarcacion"
+              [ngModelOptions]="{standalone: true}" id="inputAddress" placeholder="">
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Hora Inicio</label>
+              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.HoraInicio"
+                [ngModelOptions]="{standalone: true}" placeholder="">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Minuto Inicio</label>
+              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.MinutoInicio"
+                [ngModelOptions]="{standalone: true}" placeholder="">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Hora Termino</label>
+              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.HoraTermino"
+                [ngModelOptions]="{standalone: true}" placeholder="">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Minuto Termino</label>
+              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.MinutoTermino"
+                [ngModelOptions]="{standalone: true}" placeholder="">
+            </div>
+          </div>
+
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="GetAcceso()"> Agregar</button>
+      </div>
+    </div>
+  </div>
+</div> -->
