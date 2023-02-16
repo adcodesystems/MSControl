@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModel } from '@angular/forms';
 
 
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TipoconfiguracionmarcacionComponent } from './components/tipoconfiguracionmarcacion/tipoconfiguracionmarcacion.component';
@@ -36,7 +38,7 @@ import { HorarioComponent } from './components/horario/horario.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgModel
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
