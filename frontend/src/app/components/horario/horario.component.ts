@@ -1,11 +1,11 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { HorarioModel } from 'src/app/Models/Horario/HorarioModel';
+import { HorarioSaveModel } from 'src/app/Models/Horario/HorarioSaveModel';
 import { HorarioDetalleModel } from 'src/app/Models/Horario/HorarioDetalleModel';
 import { HorarioDetallePopupModel } from 'src/app/Models/Horario/HorarioDetallePopupModel';
 import { Router } from '@angular/router';
 import { HorarioPrueba } from 'src/app/Models/Horario/HorarioPrueba';
 import { HorarioService } from '../../services/horario.service';
-
+import { GeneralService } from '../../services/general.service';
 @Component({
   selector: 'app-horario',
   templateUrl: './horario.component.html',
@@ -17,12 +17,10 @@ export class HorarioComponent implements OnInit {
   FlaInicioConfiguracion: boolean = false;
   model = new HorarioDetalleModel();
 
-  HorarioPruebaEntity: HorarioPrueba = {
-    HorarioId: 0,
-    Nombre: 'Jose',
-  }
-
-  HorarioEntity: HorarioModel = {
+  TurnoLista: any = []
+  ModalidadHorarioLista: any = []
+  TipoHorarioLista: any = []
+  HorarioEntity: HorarioSaveModel = {
     HorarioId: 0,
     Nombre: '',
     InicioHora: 0,
@@ -33,7 +31,7 @@ export class HorarioComponent implements OnInit {
     TurnoId: 0,
     TipoHorarioId: 0,
     ModalidadHorarioId: 0,
-    FechaRegistro: Date(),
+    FechaRegistro: new Date("2016-01-17T09:50:29+0000"),
     UsuarioRegistro: '',
     EstadoRegistro: true,
     data: []
@@ -64,15 +62,41 @@ export class HorarioComponent implements OnInit {
   }
 
 
-  constructor(protected Horarioservices: HorarioService, private router: Router) {
+  constructor(protected Horarioservices: HorarioService, protected GeneralServices: GeneralService, private router: Router) {
   }
 
   ngOnInit() {
 
     this.FlaInicioConfiguracion = true;
-
-
+    this.Getturnos();
+    this.GetModalidadHorarios();
+    this.GetTipoHorarios();
   }
+  Getturnos() {
+    this.GeneralServices.GetTurnoItems().subscribe(
+      res => {
+        this.TurnoLista = res;
+      },
+      err => console.error
+    );
+  }
+  GetModalidadHorarios() {
+    this.GeneralServices.GetModalidadHorarioItems().subscribe(
+      res => {
+        this.ModalidadHorarioLista = res;
+      },
+      err => console.error
+    );
+  }
+  GetTipoHorarios() {
+    this.GeneralServices.GetTipoHorarioItems().subscribe(
+      res => {
+        this.TipoHorarioLista = res;
+      },
+      err => console.error
+    );
+  }
+
 
   GetAcceso() {
 
@@ -92,6 +116,14 @@ export class HorarioComponent implements OnInit {
       this.model.NomTipoSecuenciaMarcacion = 'TERMINO';
       this.HorarioEntity.data.push(this.model);
       this.FlaInicioConfiguracion = false;
+
+      this.HorarioEntity.InicioHora = this.HorarioDetallePopupEntity.HoraInicio;
+      this.HorarioEntity.InicioMinutos = this.HorarioDetallePopupEntity.MinutoInicio;
+      this.HorarioEntity.TerminoHora = this.HorarioDetallePopupEntity.HoraTermino;
+      this.HorarioEntity.TerminoMinutos = this.HorarioDetallePopupEntity.MinutoTermino;
+
+      this.HorarioEntity.TotalHorasTrabajo = this.HorarioDetallePopupEntity.HoraTermino - this.HorarioDetallePopupEntity.HoraInicio;
+
 
     } else {
 
@@ -128,7 +160,10 @@ export class HorarioComponent implements OnInit {
 
   Save() {
 
-    this.Horarioservices.SaveHorarioPrueba(this.HorarioPruebaEntity).subscribe(
+    var e = (document.getElementById("cboTurnoId")) as HTMLSelectElement;
+    this.HorarioEntity.TurnoId = parseInt( e.value);
+    
+    this.Horarioservices.SaveHorario(this.HorarioEntity).subscribe(
       res => {
         console.log(res);
         // this.Usuarios = res;
