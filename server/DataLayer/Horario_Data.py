@@ -2,6 +2,8 @@ from .configMysql import get_connection
 from EntityLayer.Horario.HorarioEntity import *
 import pymysql
 from EntityLayer.Horario.HorarioSaveModel import *
+from DataLayer.HorarioDetalle_Data import *
+
 
 class Horario_Data:
     # def Get_HorarioItems():
@@ -12,7 +14,7 @@ class Horario_Data:
     #             cursor.callproc("sp_PersonaNaturalSelectAll")
     #             resulset = cursor.fetchall()
     #         conn.close()
-           
+
     #         list = []
 
     #         for row in resulset:
@@ -22,13 +24,13 @@ class Horario_Data:
     #     except Exception as e:
     #         print(e)
 
-
     def SaveHorario(Ent: HorarioSaveModel):
         try:
             conn = get_connection()
             with conn.cursor() as cursor:
                 cursor = conn.cursor(pymysql.cursors.DictCursor)
-                args = (Ent.HorarioId,
+                args = (
+                    Ent.HorarioId,
                     Ent.Nombre,
                     Ent.InicioHora,
                     Ent.InicioMinutos,
@@ -40,11 +42,16 @@ class Horario_Data:
                     Ent.ModalidadHorarioId,
                     Ent.FechaRegistro,
                     Ent.UsuarioRegistro,
-                    Ent.EstadoRegistro) 
+                    Ent.EstadoRegistro,
+                )
 
                 result_args = cursor.callproc("sp_HorariolInsert", args)
                 for result in cursor.fetchall():
-                    Ent.HorarioId=result['v_HorarioId']
+                    Ent.HorarioId = result["v_HorarioId"]
+
+            # for row in HorarioSaveModel.Detalle:
+            #     row.HorarioId = Ent.HorarioId
+            #     HorarioDetalle_Data.SaveHorarioDetalle(row)
 
             conn.commit()
             print(result_args[0])
@@ -60,7 +67,7 @@ class Horario_Data:
     #         conn = get_connection()
     #         with conn.cursor() as cursor:
     #             cursor = conn.cursor(pymysql.cursors.DictCursor)
-    #             args = (Id,) 
+    #             args = (Id,)
     #             result_args = cursor.callproc("sp_PersonaNaturalDelete", args)
     #             conn.commit()
     #         return True
@@ -90,7 +97,7 @@ class Horario_Data:
     #             Ent.UbigeoId,
     #             Ent.FechaRegistro,
     #             Ent.UsuarioRegistro,
-    #             Ent.EstadoRegistro) 
+    #             Ent.EstadoRegistro)
 
     #         result_args = cursor.callproc("sp_PersonaNaturalUpdate", args)
 

@@ -1,5 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel
+from EntityLayer.Horario.HorarioDetalleSaveModel import HorarioDetalleSaveModel
 
 class HorarioSaveModel(BaseModel):
     HorarioId: int
@@ -15,3 +16,4 @@ class HorarioSaveModel(BaseModel):
     FechaRegistro: datetime
     UsuarioRegistro : str
     EstadoRegistro: bool
+    Detalle: list[HorarioDetalleSaveModel]
