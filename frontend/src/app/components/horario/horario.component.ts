@@ -162,7 +162,7 @@ export class HorarioComponent implements OnInit {
 
     var e = (document.getElementById("cboTurnoId")) as HTMLSelectElement;
     this.HorarioEntity.TurnoId = parseInt( e.value);
-    
+    console.log(this.HorarioEntity);
     this.Horarioservices.SaveHorario(this.HorarioEntity).subscribe(
       res => {
         console.log(res);

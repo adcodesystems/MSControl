@@ -49,9 +49,9 @@ class Horario_Data:
                 for result in cursor.fetchall():
                     Ent.HorarioId = result["v_HorarioId"]
 
-            # for row in HorarioSaveModel.Detalle:
-            #     row.HorarioId = Ent.HorarioId
-            #     HorarioDetalle_Data.SaveHorarioDetalle(row)
+            for row in Ent.data:
+                row.HorarioId = Ent.HorarioId
+                HorarioDetalle_Data.SaveHorarioDetalle(row)
 
             conn.commit()
             print(result_args[0])

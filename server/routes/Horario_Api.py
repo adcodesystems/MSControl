@@ -11,8 +11,10 @@ def Horario_Insert(Ent: HorarioSaveModel):
     try:
         Ent.FechaRegistro = datetime.now()
         Ent.EstadoRegistro = True
-        jsonData = Horario_Business.SaveHorario(Ent)
 
+        print(Ent)
+
+        jsonData = Horario_Business.SaveHorario(Ent)
         return jsonData
     except Exception as e:
         print(e)
