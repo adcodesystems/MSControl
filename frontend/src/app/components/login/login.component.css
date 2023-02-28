@@ -10,16 +10,17 @@
 }
 
 .login-block-items h5{
-	color: #a6a6a6ab;
+	color: #261c15;
 }
 
 .login-block-items p{
 	font-size: 12px;
 	font-weight: 200;
-	color: #a6a6a6ab;
+	color: #261c15;
 }
 
 .login-block-items a{
+	text-decoration: none;
 	color: #3d7aff;
 	cursor: pointer;
 }
@@ -28,8 +29,12 @@
 	text-decoration: underline;
 }
 
-.login-main img{
-	width: 500px;
+.img-cover-login{
+	height: 28rem;
+}
+
+.img-cover-login img{
+	height: 100%;
 }
 
 .logo{

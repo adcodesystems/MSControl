@@ -1,0 +1,131 @@
+@import url('https://fonts.cdnfonts.com/css/clan-pro');
+
+*{
+    font-family: 'Clan Pro', sans-serif;
+    text-decoration: none !important;
+}
+
+::-webkit-input-placeholder { 
+	color: #261c1550; 
+	font-size: 14px;
+}
+
+.separator{
+    height: 136px;
+}
+
+
+/******************************************************/
+
+.txtFiltro{
+    width: 500px;
+    height: 48px;
+    border-radius: 10px;
+    border: #261c1550 1px solid;
+    padding-left: 24px;
+
+}
+
+.col-txtFiltro .input:focus{
+	border-color: #3d7aff !important;
+    border: #3d7aff !important;
+}
+
+.pn-card{
+    box-shadow: 0px 5px 10px #19130818;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    min-height: 108px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.pn-card a{
+    cursor: pointer;
+    color: #261c15;
+
+}
+
+.pn-card a:hover{
+    cursor: pointer;
+    color: #261c15;
+    background: #261c1510;
+    border-radius: 10px;
+}
+
+
+
+.pn-card-det{
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.pn-card-det .pn-foto{
+    width: 42px;
+}
+
+.pn-card-det .pn-foto img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.pn-card-det .pn-content{
+    display: block;
+    padding: 0px 16px;
+    color: #261c15;
+    width: 170px;
+}
+
+.pn-card-det .pn-content .document{
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+
+.pn-card-det .pn-content .name{
+    font-size: 1.0rem;
+    font-weight: 700;
+}
+
+.pn-card-det .pn-content .lastname{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.0rem;
+    font-weight: 700;
+    width: auto;
+}
+
+.pn-ctn-active{
+    width: 10px;
+}
+
+.item-active{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00ad42;
+}
+
+
+/******************MAIN BOTONES*********************/
+.main-botones{
+    box-shadow: 0px 5px 10px #19130818;
+    border: 1px #261c15 solid;
+    border-radius: 50px;
+    padding: 20px 36px;
+    display: flex;
+}
+
+.main-botones-det{
+    margin-right: 20px;
+}
+
+.main-botones-det a{
+    color: #261c15;
+}
+
+.main-botones-det a:hover{
+    color: #3d7aff;
+}

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PreloginComponent } from './components/prelogin/prelogin.component';
 import { LoginComponent } from './components/login/login.component';
 import { PersonaNaturalFormComponent } from './components/persona-natural-form/persona-natural-form.component';
+import { PersonaNaturalMainComponent } from './components/persona-natural-main/persona-natural-main.component';
 import { MarcacionComponent } from './components/marcacion/marcacion.component';
 import { TipoconfiguracionmarcacionComponent } from './components/tipoconfiguracionmarcacion/tipoconfiguracionmarcacion.component';
 import { PageHomeComponent } from './components/page-home/page-home.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'marcacion',
     component: MarcacionComponent
+  },
+  {
+    path: 'MainPersona',
+    component: PersonaNaturalMainComponent
   },
   {
     path: 'Persona',
