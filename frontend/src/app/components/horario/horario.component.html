@@ -1,9 +1,9 @@
-<app-page-home></app-page-home>
+<app-menu></app-menu>
 <br>
 <br>
 <br>
 <br>
-<div class="container ctn-p">
+< <div class="container ctn-p">
   <div class="row">
 
     <form>
@@ -14,25 +14,25 @@
       </div>
 
 
-     
+
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputAddress">Turno</label>
 
-        <select id="cboTurnoId" class="form-select"   name="cboTurno" required  > 
-          <option value="" hidden>Selecciona Turno</option>
-          <option   *ngFor="let ItemTurno of TurnoLista" [value]="ItemTurno.TurnoId">
-            {{ItemTurno.Turno}}
-          </option>
-        </select>
+          <select id="cboTurnoId" class="form-select" name="cboTurno" required>
+            <option value="" hidden>Selecciona Turno</option>
+            <option *ngFor="let ItemTurno of TurnoLista" [value]="ItemTurno.TurnoId">
+              {{ItemTurno.Turno}}
+            </option>
+          </select>
         </div>
 
         <div class="form-group col-md-4">
           <label for="inputAddress">Tipo</label>
 
-          <select  class="form-select" name="cboTurno" required>
+          <select class="form-select" name="cboTurno" required>
             <option value="" hidden>Selecciona Tipo</option>
-            <option   *ngFor="let ItemTipo of TipoHorarioLista" [value]="ItemTipo.TipoHorarioId">
+            <option *ngFor="let ItemTipo of TipoHorarioLista" [value]="ItemTipo.TipoHorarioId">
               {{ItemTipo.TipoHorario}}
             </option>
           </select>
@@ -41,9 +41,9 @@
         <div class="form-group col-md-4">
           <label for="inputAddress">Modalidad</label>
 
-          <select  class="form-select" name="cboTurno" required>
+          <select class="form-select" name="cboTurno" required>
             <option value="" hidden>Selecciona Modalidad</option>
-            <option   *ngFor="let ItemModalidad of ModalidadHorarioLista" [value]="ItemModalidad.ModalidadHorarioId">
+            <option *ngFor="let ItemModalidad of ModalidadHorarioLista" [value]="ItemModalidad.ModalidadHorarioId">
               {{ItemModalidad.ModalidadHorario}}
             </option>
           </select>
@@ -78,63 +78,84 @@
     </table>
 
   </div>
-</div>
+  </div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Horario</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="inputAddress">Nombre</label>
-            <input type="text" class="form-control" [(ngModel)]="HorarioDetallePopupEntity.NomTipoSecuenciaMarcacion"
-              [ngModelOptions]="{standalone: true}" id="inputAddress" placeholder="">
-          </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Horario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group"  
+            [style.display]="!FlaInicioConfiguracion ? 'block' : 'none'"
 
+            >
+              <label for="inputAddress">Nombre</label>
+              <!-- <input type="text" class="form-control" [(ngModel)]="HorarioDetallePopupEntity.NomTipoSecuenciaMarcacion"
+              [ngModelOptions]="{standalone: true}" id="inputAddress" placeholder=""> -->
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Hora Inicio</label>
-              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.HoraInicio"
-                [ngModelOptions]="{standalone: true}" placeholder="">
+              <select class="form-select" id="cboTipoMarcacionId" 
+                name="cboTipoMarcacion" required>
+                <option value="" hidden>Seleccione tipo</option>
+                <option *ngFor="let ItemTipoSecuenciaMarcacion of TipoSecuenciaMarcacionLista"
+                  [value]="ItemTipoSecuenciaMarcacion.TipoSecuenciaMarcacionId">
+                  {{ItemTipoSecuenciaMarcacion.NomTipoSecuencia}}
+                </option>
+              </select>
             </div>
-            <div class="form-group col-md-6">
-              <label for="inputPassword4">Minuto Inicio</label>
-              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.MinutoInicio"
-                [ngModelOptions]="{standalone: true}" placeholder="">
+
+            <div class="form-group"   >
+              <label for="inputAddress">Nombre</label>
+          <input type="time"  timeformat="24h"
+          id="cboTimeId" 
+          class="apellidos form-control" placeholder="">
+
+          
             </div>
-          </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Hora Termino</label>
-              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.HoraTermino"
-                [ngModelOptions]="{standalone: true}" placeholder="">
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Hora Inicio</label>
+                <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.HoraInicio"
+                  [ngModelOptions]="{standalone: true}" placeholder="">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Minuto Inicio</label>
+                <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.MinutoInicio"
+                  [ngModelOptions]="{standalone: true}" placeholder="">
+              </div>
             </div>
-            <div class="form-group col-md-6">
-              <label for="inputPassword4">Minuto Termino</label>
-              <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.MinutoTermino"
-                [ngModelOptions]="{standalone: true}" placeholder="">
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Hora Termino</label>
+                <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.HoraTermino"
+                  [ngModelOptions]="{standalone: true}" placeholder="">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Minuto Termino</label>
+                <input type="text" class="apellidos form-control" [(ngModel)]="HorarioDetallePopupEntity.MinutoTermino"
+                  [ngModelOptions]="{standalone: true}" placeholder="">
+              </div>
             </div>
-          </div>
 
 
-        </form>
+          </form>
 
-      </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="GetAcceso()"> Agregar</button>
-        <!-- <button style="margin-top: 8px;" (click)="GetAcceso()" class="btn_save">Agregar</button> -->
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="GetAcceso()"> Agregar</button>
+          <!-- <button style="margin-top: 8px;" (click)="GetAcceso()" class="btn_save">Agregar</button> -->
+        </div>
       </div>
     </div>
   </div>
-</div>

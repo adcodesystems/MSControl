@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { HorarioPrueba } from 'src/app/Models/Horario/HorarioPrueba';
 import { HorarioService } from '../../services/horario.service';
 import { GeneralService } from '../../services/general.service';
+import { TipoSecuenciaMarcacionModel } from 'src/app/Models/General/TipoSecuenciaMarcacionModel';
 @Component({
   selector: 'app-horario',
   templateUrl: './horario.component.html',
@@ -20,6 +21,8 @@ export class HorarioComponent implements OnInit {
   TurnoLista: any = []
   ModalidadHorarioLista: any = []
   TipoHorarioLista: any = []
+  TipoSecuenciaMarcacionLista: any = []
+  ListaPrueba: Array<TipoSecuenciaMarcacionModel> = [];
   HorarioEntity: HorarioSaveModel = {
     HorarioId: 0,
     Nombre: '',
@@ -71,6 +74,7 @@ export class HorarioComponent implements OnInit {
     this.Getturnos();
     this.GetModalidadHorarios();
     this.GetTipoHorarios();
+    this.GeTipoSecuenciaMarcacionItems();
   }
   Getturnos() {
     this.GeneralServices.GetTurnoItems().subscribe(
@@ -96,9 +100,18 @@ export class HorarioComponent implements OnInit {
       err => console.error
     );
   }
-
+  GeTipoSecuenciaMarcacionItems() {
+    this.GeneralServices.GeTipoSecuenciaMarcacionItems().subscribe(
+      res => {
+        this.TipoSecuenciaMarcacionLista = res;
+      },
+      err => console.error
+    );
+  }
 
   GetAcceso() {
+    var e = (document.getElementById("cboTimeId")) as HTMLSelectElement;
+    console.log(e.textContent)
 
     if (this.FlaInicioConfiguracion) {
       this.model = new HorarioDetalleModel();
@@ -127,12 +140,18 @@ export class HorarioComponent implements OnInit {
 
     } else {
 
+      var e = (document.getElementById("cboTipoMarcacionId")) as HTMLSelectElement;
+      this.HorarioEntity.TurnoId = parseInt(e.value);
+      var NomTipoMarcacionElement = e.options[e.selectedIndex].textContent
+
+
 
       this.model = new HorarioDetalleModel();
       this.model.Items = 2;
       this.model.Hora = this.HorarioDetallePopupEntity.HoraInicio;
       this.model.Minuto = this.HorarioDetallePopupEntity.MinutoInicio;
       this.model.NomTipoSecuenciaMarcacion = this.HorarioDetallePopupEntity.NomTipoSecuenciaMarcacion;
+      this.model.NomTipoSecuenciaMarcacion = String(NomTipoMarcacionElement).toUpperCase();
       this.HorarioEntity.data.push(this.model);
 
 
@@ -140,7 +159,7 @@ export class HorarioComponent implements OnInit {
       this.model.Items = 3;
       this.model.Hora = this.HorarioDetallePopupEntity.HoraTermino;
       this.model.Minuto = this.HorarioDetallePopupEntity.MinutoTermino;
-      this.model.NomTipoSecuenciaMarcacion = this.HorarioDetallePopupEntity.NomTipoSecuenciaMarcacion;
+      this.model.NomTipoSecuenciaMarcacion= String(NomTipoMarcacionElement).toUpperCase();
       this.HorarioEntity.data.push(this.model);
     }
 
@@ -154,15 +173,14 @@ export class HorarioComponent implements OnInit {
 
     });
 
-    console.log(this.HorarioEntity);
 
   }
 
   Save() {
 
     var e = (document.getElementById("cboTurnoId")) as HTMLSelectElement;
-    this.HorarioEntity.TurnoId = parseInt( e.value);
-    console.log(this.HorarioEntity);
+    this.HorarioEntity.TurnoId = parseInt(e.value);
+
     this.Horarioservices.SaveHorario(this.HorarioEntity).subscribe(
       res => {
         console.log(res);

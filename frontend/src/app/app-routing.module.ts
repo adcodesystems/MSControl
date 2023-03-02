@@ -8,7 +8,7 @@ import { TipoconfiguracionmarcacionComponent } from './components/tipoconfigurac
 import { PageHomeComponent } from './components/page-home/page-home.component';
 import { SetupMarcacionComponent } from './components/setup-marcacion/setup-marcacion.component';
 import { HorarioComponent } from './components/horario/horario.component';
-
+import { HorarioMainComponent } from './components/horario-main/horario-main.component';
 const routes: Routes = [
   {
     path: '',
@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'Horario',
     component: HorarioComponent
+  },
+  {
+    path: 'HorarioMain',
+    component: HorarioMainComponent
   },
 ];
 @NgModule({

@@ -19,6 +19,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MarcacionComponent } from './components/marcacion/marcacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { HorarioComponent } from './components/horario/horario.component';
+import { HorarioMainComponent } from './components/horario-main/horario-main.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HorarioComponent } from './components/horario/horario.component';
     MenuComponent,
     MarcacionComponent,
     LoginComponent,
-    HorarioComponent
+    HorarioComponent,
+    HorarioMainComponent
   ],
   imports: [
     BrowserModule,

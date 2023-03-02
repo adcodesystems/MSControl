@@ -19,4 +19,8 @@ export class GeneralService {
   GetTipoHorarioItems() {
     return this.http.get(`/api/General/Get_TipoHorarioItems/`);
   }
+
+  GeTipoSecuenciaMarcacionItems() {
+    return this.http.get(`/api/General/GeTipoSecuenciaMarcacionItems/`);
+  }
 }
