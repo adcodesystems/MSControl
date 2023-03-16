@@ -19,11 +19,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MarcacionComponent } from './components/marcacion/marcacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { HorarioComponent } from './components/horario/horario.component';
-<<<<<<< HEAD
 import { HorarioMainComponent } from './components/horario-main/horario-main.component';
-=======
 import { PersonaNaturalMainComponent } from './components/persona-natural-main/persona-natural-main.component';
->>>>>>> 32ac093656ed894de4647cfb36e585d7ae80ba36
 
 @NgModule({
   declarations: [
@@ -38,11 +35,8 @@ import { PersonaNaturalMainComponent } from './components/persona-natural-main/p
     MarcacionComponent,
     LoginComponent,
     HorarioComponent,
-<<<<<<< HEAD
-    HorarioMainComponent
-=======
+    HorarioMainComponent,
     PersonaNaturalMainComponent
->>>>>>> 32ac093656ed894de4647cfb36e585d7ae80ba36
   ],
   imports: [
     BrowserModule,

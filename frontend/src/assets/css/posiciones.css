@@ -1,0 +1,18 @@
+/********************************UBICACIÓN DE ITEMS**********************************/
+.center-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-left{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.center-right{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}

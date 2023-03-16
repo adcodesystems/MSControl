@@ -5,6 +5,16 @@
 @import url('https://fonts.cdnfonts.com/css/clan-pro');
 
 
+/**/
+@import url("assets/css/colores.css");
+@import url("assets/css/divisores.css");
+@import url("assets/css/formulario.css");
+@import url("assets/css/padding.css");
+@import url("assets/css/posiciones.css");
+@import url("assets/css/textos.css");
+@import url("assets/css/titulos.css");
+@import url("assets/css/botones.css");
+
 *{
     margin: 0;
     top: 0;
@@ -13,171 +23,6 @@
     text-decoration: none;
     list-style: none;
 }
-
-
-/***************TITULOS Y TEXTOS*************/
-
-h1,h2,h3,h4,h5{
-    font-weight: bold;
-}
-
-h1 {
-    font-size: 48px;
-}
-
-h2{
-    font-size: 32px;
-}
-
-p{
-    font-family: 'Lato', sans-serif;
-    font-weight: 200;
-    font-size: 18px;
-}
-
-/***********************COLORES*****************************/
-
-.bg-color1{
-    background: #F00000;
-}
-
-.bg-color2{
-    background: #ff4848;
-}
-
-.bg-color3{
-    background:#FFFAFA;
-}
-
-.bg-color4{
-    background: #261c15;
-}
-
-.bg-color5{
-    background: #191308;
-}
-
-
-/******************************COLORES EN TEXTO**********************************/
-
-.text-color1{
-    color: #F00000;
-}
-
-.text-color2{
-    color: #ff4848;
-}
-
-.text-color3{
-    color:#FFFAFA;
-}
-
-.text-color4{
-    color: #261c15;
-}
-
-.text-color5{
-    color: #191308;
-}
-
-
-/************************CENTRADO DE ITEMS**********************************/
-
-.center-items{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.center-left{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.center-right{
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-
-/*************************ESPACIADORES*************************************/
-
-.padding-top-xs{
-    padding-top:20px;
-}
-
-.padding-top-s{
-    padding-top:40px;
-}
-
-.padding-top-m{
-    padding-top:60px;
-}
-
-.padding-top-l{
-    padding-top:80px;
-}
-
-.padding-top-xl{
-    padding-top:100px;
-}
-
-.padding-top-xxl{
-    padding-top:120px;
-}
-
-
-
-.padding-bottom-xs{
-    padding-bottom:20px;
-}
-
-.padding-bottom-s{
-    padding-bottom:40px;
-}
-
-.padding-bottom-m{
-    padding-bottom:60px;
-}
-
-.padding-bottom-l{
-    padding-bottom:80px;
-}
-
-.padding-bottom-xl{
-    padding-bottom:100px;
-}
-
-.padding-bottom-xxl{
-    padding-bottom:120px;
-}
-
-
-
-/**************************DIVISORES*******************************/
-.space-xs{
-    height: 50px;
-}
-
-.space-s{
-    height: 100px;
-}
-
-.space-m{
-    height: 200px;
-}
-
-.space-l{
-    height: 300px;
-}
-
-.space-xl{
-    height: 400px;
-}
-
-
 
 
 
@@ -241,23 +86,3 @@ select:not(:valid) {
 	font-family: 'Clan Pro', sans-serif;
   }
 
-.btn_save{
-	width: 297px;
-	height: 48px;
-	font-size: 18px;
-	background: #191308;
-    color: #fff;
-    border: 0;
-	border-radius: 8px;
-	cursor: pointer;
-	justify-content: center;
-	display: flex;
-	align-items: center;
-	transition: 0.5s ease;
-	font-family: 'Lato', sans-serif;
-	font-weight: 500;
-}
-
-.btn_save:hover{
-	background: #191308d0;
-}
