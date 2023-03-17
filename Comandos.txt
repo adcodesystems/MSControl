@@ -22,3 +22,5 @@ npm i bootstrap
 
 GIGO
 1603
+
+pip install uvicorn
