@@ -14,6 +14,7 @@
 @import url("assets/css/textos.css");
 @import url("assets/css/titulos.css");
 @import url("assets/css/botones.css");
+@import url("assets/css/tablas.css");
 
 *{
     margin: 0;
@@ -24,65 +25,4 @@
     list-style: none;
 }
 
-
-
-/******************FORMULARIO******************/
-/*PLACEHOLDER*/
-::-webkit-input-placeholder { 
-	color: #261c1550; 
-	font-family: 'Clan Pro', sans-serif;
-	font-size: 14px;
-}
-
-::-moz-placeholder { 
-	color: #F9F9F9; 
-	font-family: 'Clan Pro', sans-serif;
-	font-size: 14px;
-}
-
-.container-form-input{
-    padding-bottom: 16px;
-}
-
-.form{
-    padding-bottom: 86px;
-}
-
-.form label{
-	font-size: 16px;
-	margin-top: -20px;
-	font-family: 'Clan Pro', sans-serif;
-}
-
-.form input{
-	margin-top: -7px;
-    width: 297px;
-    height: 32px;
-	border-radius: 4px;
-	transition: 0.5s ease;
-	border: solid 1px #A6A6A6;
-	font-size: 14px;
-}
-
-.form input .input:focus{
-	border-color: #3d7aff;
-}
-
-.form select{
-	margin-top: -7px;
-    width: 297px;
-    height: 32px;
-	border: 1px solid #A6A6A6;
-	border-radius: 4px;
-	display: block;
-	transition: 0.5s ease;
-	padding-left: 8px;
-	font-size: 14px;
-}
-
-select:not(:valid) {
-	color: #A6A6A6;
-	font-size: 14px;
-	font-family: 'Clan Pro', sans-serif;
-  }
 

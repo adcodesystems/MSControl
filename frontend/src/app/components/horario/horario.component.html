@@ -3,7 +3,109 @@
 <br>
 <br>
 <br>
-< <div class="container ctn-p">
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center title-form">
+        <h2>Horario</h2>
+        <p>Configura los horarios para que el personal empiece a marcar.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <form class="form" action="">
+          <div class="container-form-input">
+            <label>Nombre del horario</label>
+            <input type="text" class="form-control">
+          </div>
+        
+          <div class="container-form-input">
+            <label>Turno</label>
+            <input type="text" class="form-control">
+          </div>
+  
+          <div class="container-form-input">
+            <label>Tipo</label>
+            <input type="text" class="form-control">
+          </div>
+  
+          <div class="container-form-input">
+            <label>Modalidad</label>
+            <input type="text" class="form-control">
+          </div>
+          
+          <div class="container-form-input">
+            <button (click)="GetAcceso()" class="btn_save">Guardar</button>
+          </div>
+          
+          
+        </form>
+
+        <div class="content-help">
+          <i class="bi bi-info-circle"></i>
+          <br>
+          <span>Configura un horario
+            completando las opciones
+            y añade  la hora de inicio, 
+            final, pausas activas,
+            refrigerio y todo lo 
+            necesario.</span>
+        </div>
+       
+      </div>
+      <div class="col-md-9">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Minuto</th>
+              <th scope="col">Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Buzzcocks</th>
+              <td>1976</td>
+              <td>9</td>
+              <td>Ever fallen in love</td>
+            </tr>
+            <tr>
+              <th scope="row">The Clash</th>
+              <td>1976</td>
+              <td>6</td>
+              <td>London Calling</td>
+            </tr>
+            <tr>
+              <th scope="row">The Stranglers</th>
+              <td>1974</td>
+              <td>17</td>
+              <td>No More Heroes</td>
+            </tr>
+          </tbody>
+          <!-- <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Número total de álbumes</th>
+              <td colspan="2">77</td>
+            </tr>
+          </tfoot> -->
+        </table>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="space-s">
+
+</div>
+
+<!-- <div class="container ctn-p">
   <div class="row">
 
     <form>
@@ -98,8 +200,7 @@
 
             >
               <label for="inputAddress">Nombre</label>
-              <!-- <input type="text" class="form-control" [(ngModel)]="HorarioDetallePopupEntity.NomTipoSecuenciaMarcacion"
-              [ngModelOptions]="{standalone: true}" id="inputAddress" placeholder=""> -->
+             
 
               <select class="form-select" id="cboTipoMarcacionId" 
                 name="cboTipoMarcacion" required>
@@ -152,10 +253,8 @@
 
         </div>
         <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
           <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="GetAcceso()"> Agregar</button>
-          <!-- <button style="margin-top: 8px;" (click)="GetAcceso()" class="btn_save">Agregar</button> -->
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
