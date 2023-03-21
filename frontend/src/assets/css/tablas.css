@@ -64,7 +64,7 @@
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 .table-title {
-    background: #261c15;
+    /* background: #261c15; */
     color: #fff;
     padding: 12px 30px;
     /* margin: -20px -25px 10px; */
@@ -88,7 +88,8 @@
 }
 .table-title .btn:hover, .table-title .btn:focus {
     color: #191308;
-    background: #f4f4f4;
+    background: #19130805;
+    border-radius: 50px;
 }
 .table-title .btn i {
     float: left;
@@ -135,7 +136,7 @@ table.table td a {
     text-decoration: none;
 }
 table.table td a:hover {
-    color: #191308;
+    color: #3d7aff;
 }
 table.table td a.settings {
     color: #191308;
