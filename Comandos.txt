@@ -24,3 +24,5 @@ GIGO
 1603
 
 pip install uvicorn
+
+python -m uvicorn app:app --reload

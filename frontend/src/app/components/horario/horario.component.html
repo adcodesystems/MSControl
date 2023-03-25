@@ -6,7 +6,7 @@
 
 <div class="container-fluid">
   <div class="container">
-    <div class="row">
+    <div class="row" style="background-color: #fffafa;">
       <div class="col-md-12 text-center title-form">
         <h2>Horario</h2>
         <p>Configura los horarios para que el personal empiece a marcar.</p>
@@ -102,41 +102,26 @@
                             <th>Acción</th>
 
                         </tr>
-                    </thead>
+                    </thead> 
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><a href="#"><img src="https://i.imgur.com/XucfZr8.jpeg" class="avatar" alt="Avatar"> Michael Holz</a></td>                       
-                            <td>Admin</td>
-                            <td>Active</td>
-                            <td>
-                                <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="bi bi-pencil-square"></i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="bi bi-trash3-fill"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="#"><img src="https://i.imgur.com/XucfZr8.jpeg" class="avatar" alt="Avatar"> Paula Wilson</a></td>                     
-                            <td>Publisher</td>
-                            <td>Active</td>
-                            <td>
-                                <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><a href="#"><img src="https://i.imgur.com/XucfZr8.jpeg" class="avatar" alt="Avatar"> Antonio Moreno</a></td>
-                            <td>Publisher</td>
-                            <td>Suspended</td>                        
-                            <td>
-                                <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                            </td>                        
-                        </tr>
+                      <tr *ngFor="let d of HorarioEntity.data">
+                        <td>{{d.Items}}</td>
+                        <td>{{d.Hora}}</td>
+                        <td>{{d.Minuto}}</td>
+                        <td>{{d.NomTipoSecuenciaMarcacion}}</td>
+                        <td>
+                          <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                          <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                      </td>  
+                      </tr>
+              
                     </tbody>
+                   
                 </table>
-                <div class="clearfix">
+
+
+                
+                <!-- <div class="clearfix">
                     <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                     <ul class="pagination">
                         <li class="page-item disabled"><a href="#">Previous</a></li>
@@ -147,7 +132,7 @@
                         <li class="page-item"><a href="#" class="page-link">5</a></li>
                         <li class="page-item"><a href="#" class="page-link">Next</a></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>  
@@ -261,6 +246,21 @@
 <div class="space-s">
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- <div class="container ctn-p">
   <div class="row">

@@ -110,8 +110,8 @@ export class HorarioComponent implements OnInit {
   }
 
   GetAcceso() {
-    var e = (document.getElementById("cboTimeId")) as HTMLSelectElement;
-    console.log(e.textContent)
+    // var e = (document.getElementById("cboTimeId")) as HTMLSelectElement;
+    // console.log(e.textContent)
 
     if (this.FlaInicioConfiguracion) {
       this.model = new HorarioDetalleModel();
