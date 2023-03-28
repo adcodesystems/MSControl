@@ -18,3 +18,39 @@
 .btn_save:hover{
 	background: #191308d0;
 }
+
+
+
+
+/*MARCACIONES*/
+.button-marcacion-v1 button{
+    width: 100%;
+    height: 60px;
+    background: #191308;
+    border-radius: 8px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    color: #ffffff;
+    letter-spacing: 0.15em;
+    padding-left: 18px;
+    padding-top: 8px;
+    cursor: pointer;
+	transition: 0.3s ease-in-out all;
+}
+
+.button-marcacion-v1 button span{
+    left: 0;
+    font-size: 18px !important;
+}
+
+.button-marcacion-v1 button i{
+    margin-left: 24px;
+    font-size: 24px !important;
+}
+
+.button-marcacion-v1 button:hover{
+	background: #191308d0;
+	transition: 0.3s ease-in-out all;
+}

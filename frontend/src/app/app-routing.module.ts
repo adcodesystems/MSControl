@@ -10,6 +10,9 @@ import { PageHomeComponent } from './components/page-home/page-home.component';
 import { SetupMarcacionComponent } from './components/setup-marcacion/setup-marcacion.component';
 import { HorarioComponent } from './components/horario/horario.component';
 import { HorarioMainComponent } from './components/horario-main/horario-main.component';
+
+import {TipoconfiguracionComponent} from './components/tipoconfiguracion/tipoconfiguracion.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +34,10 @@ const routes: Routes = [
   {
     path: 'Persona',
     component: PersonaNaturalFormComponent
+  },
+  {
+    path: 'tipoconfiguracion',
+    component: TipoconfiguracionComponent
   },
   {
     path: 'TipoConfiguracionMarcacion',

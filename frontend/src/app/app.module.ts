@@ -21,6 +21,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HorarioComponent } from './components/horario/horario.component';
 import { HorarioMainComponent } from './components/horario-main/horario-main.component';
 import { PersonaNaturalMainComponent } from './components/persona-natural-main/persona-natural-main.component';
+import { MenuDosComponent } from './components/menu-dos/menu-dos.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PersonaNaturalMainComponent } from './components/persona-natural-main/p
     LoginComponent,
     HorarioComponent,
     HorarioMainComponent,
-    PersonaNaturalMainComponent
+    PersonaNaturalMainComponent,
+    MenuDosComponent
   ],
   imports: [
     BrowserModule,
