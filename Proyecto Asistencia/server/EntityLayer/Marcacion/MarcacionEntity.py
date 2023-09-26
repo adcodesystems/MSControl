@@ -22,7 +22,7 @@ def Cargar(_DB: any):
         c.HorarioDetalleId = _DB['HorarioDetalleId']
         c.Secuencia = _DB['Secuencia']
         c.FlaTardanza = bool(_DB['FlaTardanza'])
-        c.FlaTolerancia = bool(_DB['FlaTolerancia']
+        c.FlaTolerancia = bool(_DB['FlaTolerancia'])
         c.FechaMarcacion = _DB['FechaMarcacion']
         c.UsuarioRegistro = _DB['UsuarioRegistro']
         c.EstadoRegistro = bool(_DB['EstadoRegistro'])
