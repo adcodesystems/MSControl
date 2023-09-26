@@ -1,8 +1,8 @@
 from DataLayer.Marcacion_Data import *
-from EntityLayer.Marcacion.MarcacionSaveModel import *
+from EntityLayer.Marcacion.MarcacionEntity import *
 
 class Marcacion_Business:
-    def SaveMarcacion(Ent: MarcacionSaveModel):
+    def SaveMarcacion(Ent: MarcacionEntity):
         try:
             data = Marcacion_Data.SaveMarcacion(Ent)
             return data

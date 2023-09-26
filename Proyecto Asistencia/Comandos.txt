@@ -17,9 +17,6 @@ ng g c components/Nombre
 
 
 
-bootstrap
-npm i bootstrap
-
 GIGO
 1603
 

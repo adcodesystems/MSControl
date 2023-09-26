@@ -1,13 +1,13 @@
 from .configMysql import get_connection
 from EntityLayer.Marcacion.MarcacionEntity import *
 import pymysql
-from EntityLayer.Marcacion.MarcacionSaveModel import *
+from EntityLayer.Marcacion.MarcacionEntity import *
 # from DataLayer.HorarioDetalle_Data import *
 
 
 class Marcacion_Data:
     
-    def SaveHorario(Ent: MarcacionModel):
+    def SaveHorario(Ent: MarcacionEntity):
         try:
             conn = get_connection()
             with conn.cursor() as cursor:

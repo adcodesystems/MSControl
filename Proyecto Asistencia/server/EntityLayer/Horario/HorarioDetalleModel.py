@@ -8,5 +8,5 @@ class HorarioDetalleModel(BaseModel):
     Hora: int
     Minuto: int
     TipoSecuenciaMarcacionId: int
-    NomTipoSecuenciaMarcacion = str
+    NomTipoSecuenciaMarcacion :str
     FlaInicio: bool

@@ -1,7 +1,7 @@
 from datetime import datetime
 from pydantic import BaseModel
 
-class PersonaNaturalSave(BaseModel):
+class MarcacionModel(BaseModel):
     MarcacionId: int
     HorarioId: int
     HorarioDetalleId: int
