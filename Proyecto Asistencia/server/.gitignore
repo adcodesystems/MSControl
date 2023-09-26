@@ -1,4 +1,4 @@
-venv/
+/venv/
 __pycache__/
 BusinessLayer/__pycache__/
 DataLayer/__pycache__/
