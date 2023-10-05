@@ -1,19 +1,19 @@
 from fastapi import FastAPI
 from routes.PersonaNatural_Api import PersonaNatural
-from routes.Usuario_Api import Usuario
-from routes.Horario_Api import Horario
-from routes.Turno_Api import Turno
-from routes.General_Api import General
-from routes.Marcacion_Api import Marcacion
+# from routes.Usuario_Api import Usuario
+# from routes.Horario_Api import Horario
+# from routes.Turno_Api import Turno
+# from routes.General_Api import General
+# from routes.Marcacion_Api import Marcacion
 
 app = FastAPI( title="Adcode",   description='Sistema de asistencia  ',)
 
 app.include_router(PersonaNatural)
-app.include_router(Usuario)
-app.include_router(Horario)
-app.include_router(Turno)
-app.include_router(General)
-app.include_router(Marcacion)
+# app.include_router(Usuario)
+# app.include_router(Horario)
+# app.include_router(Turno)
+# app.include_router(General)
+# app.include_router(Marcacion)
 
 tags_metadata = [
     {
