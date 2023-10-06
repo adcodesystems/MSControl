@@ -1,0 +1,36 @@
+type PersonaNaturalItemModel {
+    PersonaNaturalId: Int
+    TipoDocumentoIdentidadId: Int
+    NumDocumento: String
+    Nombres: String
+    ApellidoPaterno: String
+    ApellidoMaterno: String
+    FechaNacimiento: String
+    FechaVencimiento: String
+    TipoSexoId: Int
+    EstadoCivilId: Int
+    Direccion: String
+    DireccionReferencia: String
+    UbigeoId: Int
+    FechaRegistro: String
+    UsuarioRegistro: String
+    EstadoRegistro: Boolean
+}
+
+type TipoDocumentoIdentidadSaveModel {
+    TipoDocumentoIdentidadId: Int
+    Codigo: String
+    Alias : String
+    Descripcion:String
+    EsEmpresa:Boolean
+}
+
+
+
+
+
+
+type Query {
+    GHPersonaNaturals: [PersonaNaturalItemModel]
+    GHTipoDocumentoIdentidades :[TipoDocumentoIdentidadSaveModel]
+}

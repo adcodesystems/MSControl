@@ -1,0 +1,63 @@
+from datetime import datetime
+from pydantic import BaseModel
+from Utilidades.Enumerado.ProcessActionEnum import ProcessActionEnum
+
+class PersonaNaturalSaveModel(BaseModel):
+    PersonaNaturalId: int
+    TipoDocumentoIdentidadId: int = None
+    NumDocumento: str = None
+    Nombres: str = None
+    ApellidoPaterno: str = None
+    ApellidoMaterno: str = None
+    FechaNacimiento: datetime = None
+    FechaVencimiento: datetime = None
+    TipoSexoId: int = None
+    EstadoCivilId: int = None
+    Direccion: str = None
+    DireccionReferencia: str = None
+    UbigeoId: int = None
+    FechaRegistro: datetime = None
+    UsuarioRegistro: str = None
+    EstadoRegistro: bool = None
+    Action: ProcessActionEnum
+
+class PersonaNaturalItemModel():
+    PersonaNaturalId: int
+    TipoDocumentoIdentidadId: int = None
+    NumDocumento: str = None
+    Nombres: str = None
+    ApellidoPaterno: str = None
+    ApellidoMaterno: str = None
+    FechaNacimiento: datetime = None
+    FechaVencimiento: datetime = None
+    TipoSexoId: int = None
+    EstadoCivilId: int = None
+    Direccion: str = None
+    DireccionReferencia: str = None
+    UbigeoId: int = None
+    FechaRegistro: datetime = None
+    UsuarioRegistro: str = None
+    EstadoRegistro: bool = None
+
+    def Cargar(_DB):
+        c = PersonaNaturalItemModel()
+        c.PersonaNaturalId= _DB["PersonaNaturalId"]
+        c.TipoDocumentoIdentidadId= _DB["TipoDocumentoIdentidadId"]
+        c.NumDocumento= _DB["NumDocumento"]
+        c.Nombres= _DB["Nombres"]
+        c.ApellidoPaterno= _DB["ApellidoPaterno"]
+        c.ApellidoMaterno= _DB["ApellidoMaterno"]
+        c.FechaNacimiento= _DB["FechaNacimiento"]
+        c.FechaVencimiento= _DB["FechaVencimiento"]
+        c.TipoSexoId= _DB["TipoSexoId"]
+        c.EstadoCivilId= _DB["EstadoCivilId"]
+        c.Direccion= _DB["Direccion"]
+        c.DireccionReferencia= _DB["DireccionReferencia"]
+        c.UbigeoId= _DB["UbigeoId"]
+        c.FechaRegistro= _DB["FechaRegistro"]
+        c.UsuarioRegistro= _DB["UsuarioRegistro"]
+        c.EstadoRegistro= bool(ord(_DB["EstadoRegistro"]))
+        return c
+
+
+
