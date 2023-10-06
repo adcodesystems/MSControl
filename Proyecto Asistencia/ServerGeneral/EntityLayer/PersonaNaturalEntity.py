@@ -4,21 +4,21 @@ from Utilidades.Enumerado.ProcessActionEnum import ProcessActionEnum
 
 class PersonaNaturalSaveModel(BaseModel):
     PersonaNaturalId: int
-    TipoDocumentoIdentidadId: int = None
-    NumDocumento: str = None
-    Nombres: str = None
-    ApellidoPaterno: str = None
-    ApellidoMaterno: str = None
-    FechaNacimiento: datetime = None
-    FechaVencimiento: datetime = None
-    TipoSexoId: int = None
-    EstadoCivilId: int = None
-    Direccion: str = None
-    DireccionReferencia: str = None
-    UbigeoId: int = None
-    FechaRegistro: datetime = None
-    UsuarioRegistro: str = None
-    EstadoRegistro: bool = None
+    TipoDocumentoIdentidadId: int
+    NumDocumento: str 
+    Nombres: str 
+    ApellidoPaterno: str 
+    ApellidoMaterno: str 
+    FechaNacimiento: datetime 
+    FechaVencimiento: datetime 
+    TipoSexoId: int
+    EstadoCivilId: int 
+    Direccion: str 
+    DireccionReferencia: str 
+    UbigeoId: int 
+    FechaRegistro: datetime 
+    UsuarioRegistro: str
+    EstadoRegistro: bool 
     Action: ProcessActionEnum
 
 class PersonaNaturalItemModel():

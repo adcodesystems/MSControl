@@ -35,9 +35,12 @@ class PersonaNaturalDB:
                 args.append(Ent.UsuarioRegistro)
                 args.append(Ent.EstadoRegistro)
 
+            
                 cursor.callproc(Store, args)
-                Ent.PersonaNaturalId = int(cursor.fetchone()["v_PersonaNaturalId"])
 
+                Ent.PersonaNaturalId = int(cursor.fetchone()["v_PersonaNaturalId"])
+                id_insertado = cursor.stored_results().fetchone()[0]
+                print(id_insertado)
             conn.commit()
             return Ent
         except Exception as e:
