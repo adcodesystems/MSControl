@@ -6,8 +6,8 @@ from routes.PersonaNaturalRoute import PersonaNaturalRouter
 from routes.TipoDocumentoentidadRoute import TipoDocumentoentidadRouter
 from routes.TipoSexoRoute import TipoSexoRouter
 from routes.UbigeoRoute import UbigeoRouter
-from ariadne.asgi import GraphQL
-from GraphqlServer import schema
+# from ariadne.asgi import GraphQL
+# from GraphqlServer import schema
 app = FastAPI(
     title="Adcode",
     description="Sistema logistico  ",
@@ -23,7 +23,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_route("/gql/General", GraphQL(schema))
+# app.add_route("/gql/General", GraphQL(schema))
 app.include_router(EstadoCivilRouter)
 app.include_router(PersonaNaturalRouter)
 app.include_router(TipoDocumentoentidadRouter)
