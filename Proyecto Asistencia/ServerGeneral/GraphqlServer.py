@@ -1,6 +1,6 @@
 from ariadne import QueryType, make_executable_schema, load_schema_from_path
 from BusinessLayer.PersonaNatural import PersonaNatural
-from BusinessLayer.TipoDocumentoIdentidad import TipoDocumentoIdentidad
+from BusinessLayer.TipoDocumentoentidad import TipoDocumentoentidad
 
 type_defs = load_schema_from_path("types.graphql")
 query = QueryType()
@@ -11,7 +11,7 @@ def resolve_GHPersonaNaturals(_, info):
 
 @query.field("GHTipoDocumentoIdentidades")
 def resolve_GHTipoDocumentoIdentidades(_, info):
-    list = TipoDocumentoIdentidad.GetItems()
+    list = TipoDocumentoentidad.GetItems()
     return list
 
 schema = make_executable_schema(type_defs, query)

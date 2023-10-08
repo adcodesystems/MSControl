@@ -1,29 +1,29 @@
-from DataLayer.PersonaNaturalDB import *
-from EntityLayer.PersonaNaturalEntity import *
+from DataLayer.TipoSexoDB import *
+from EntityLayer.TipoSexoEntity import *
 
 
-class PersonaNatural:
-    def Save(Ent: PersonaNaturalSaveModel):
+class TipoSexo:
+    def Save(Ent: TipoSexoSaveModel):
         try:
-            return PersonaNaturalDB.Save(Ent)
+            return TipoSexoDB.Save(Ent)
         except Exception as e:
             print(e)
     
     def GetItems():
         try:
-            return PersonaNaturalDB.GetItems()
+            return TipoSexoDB.GetItems()
         except Exception as e:
             print(e)
     
     def GetItem(Id: int):
         try:
-            return PersonaNaturalDB.GetItem(Id)
+            return TipoSexoDB.GetItem(Id)
         except Exception as e:
             print(e)
     
     def Delete(Id: int):
         try:
-            return PersonaNaturalDB.Delete(Id)
+            return TipoSexoDB.Delete(Id)
         except Exception as e:
             print(e)
     

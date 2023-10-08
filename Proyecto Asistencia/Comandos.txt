@@ -12,11 +12,11 @@ EJECUTAR API
 uvicorn app:app --reload 
 uvicorn app:app --port 8080 --reload
 GREAR ANGULAR
-ng g s services/Nombre
-ng g c components/Nombre
+ng g s services/PersonaNatural/PersonaNatural
+ng g c components/PersonaNaturalMain
 
 
-
+ng g s auth
 GIGO
 1603
 

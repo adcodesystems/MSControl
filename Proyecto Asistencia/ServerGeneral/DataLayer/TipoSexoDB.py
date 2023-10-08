@@ -2,23 +2,23 @@ from Utilidades.Entidades.ResponseAPI import ResponseAPIError
 from Utilidades.Entidades.ResponseAPI import ResponseAPI
 from Utilidades.Arreglos.ListError import error_entities
 from .configMysql import get_connection
-from EntityLayer.PersonaNaturalEntity import *
+from EntityLayer.TipoSexoEntity import *
 import pymysql
 
 
-class PersonaNaturalDB:
+class TipoSexoDB:
     def GetItems():
         try:
             conn = get_connection()
             with conn.cursor() as cursor:
                 cursor = conn.cursor(pymysql.cursors.DictCursor)
-                cursor.callproc("sp_PersonaNaturalAllItems")
+                cursor.callproc("sp_TipoSexoAllItems")
                 resulset = cursor.fetchall()
             conn.close()
             list = []
 
             for row in resulset:
-                Data_ent = PersonaNaturalItemModel.Cargar(row)
+                Data_ent = TipoSexoItemModel.Cargar(row)
                 list.append(Data_ent)
             return list
         except Exception as e:
@@ -30,46 +30,32 @@ class PersonaNaturalDB:
             with conn.cursor() as cursor:
                 cursor = conn.cursor(pymysql.cursors.DictCursor)
                 args = (Id,)
-                cursor.callproc("sp_PersonaNaturalAllItem", args)
+                cursor.callproc("sp_TipoSexoAllItem", args)
                 resulset = cursor.fetchall()
             conn.close()
             list = []
 
             for row in resulset:
-                Data_ent = PersonaNaturalItemModel.Cargar(row)
+                Data_ent = TipoSexoItemModel.Cargar(row)
                 list.append(Data_ent)
             return list
         except Exception as e:
             print(e)
 
-    def Save(Ent: PersonaNaturalSaveModel):
+    def Save(Ent: TipoSexoSaveModel):
         try:
             Store: str
-            Store = "sp_PersonaNatural_Save"
+            Store = "sp_TipoSexo_Save"
             if Ent.Action == ProcessActionEnum.Update:
-                Store = "sp_PersonaNatural_Update"
+                Store = "sp_TipoSexo_Update"
             conn = get_connection()
             with conn.cursor() as cursor:
                 cursor = conn.cursor(pymysql.cursors.DictCursor)
                 args = []
-                args.append(Ent.PersonaNaturalId)
-                args.append(Ent.TipoDocumentoIdentidadId)
-                args.append(Ent.NumDocumento)
-                args.append(Ent.Nombres)
-                args.append(Ent.ApellidoPaterno)
-                args.append(Ent.ApellidoMaterno)
-                args.append(Ent.FechaNacimiento)
-                args.append(Ent.FechaVencimiento)
                 args.append(Ent.TipoSexoId)
-                args.append(Ent.EstadoCivilId)
-                args.append(Ent.Direccion)
-                args.append(Ent.DireccionReferencia)
-                args.append(Ent.UbigeoId)
-                args.append(Ent.FechaRegistro)
-                args.append(Ent.UsuarioRegistro)
-                args.append(Ent.EstadoRegistro)
+                args.append(Ent.Nombre)
                 cursor.callproc(Store, args)
-                Ent.PersonaNaturalId = int(cursor.fetchone()["v_PersonaNaturalId"])
+                Ent.TipoSexoId = int(cursor.fetchone()["v_TipoSexoId"])
 
             conn.commit()
             return Ent
@@ -86,7 +72,7 @@ class PersonaNaturalDB:
             with conn.cursor() as cursor:
                 cursor = conn.cursor(pymysql.cursors.DictCursor)
                 args = (Id,)
-                cursor.callproc("sp_PersonaNatural_Delete", args)
+                cursor.callproc("sp_TipoSexo_Delete", args)
                 conn.commit()
             return ResponseAPI.Response(True)
         except Exception as e:

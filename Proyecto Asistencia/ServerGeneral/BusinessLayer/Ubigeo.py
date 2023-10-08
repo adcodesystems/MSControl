@@ -1,29 +1,29 @@
-from DataLayer.PersonaNaturalDB import *
-from EntityLayer.PersonaNaturalEntity import *
+from DataLayer.UbigeoDB import *
+from EntityLayer.UbigeoEntity import *
 
 
-class PersonaNatural:
-    def Save(Ent: PersonaNaturalSaveModel):
+class Ubigeo:
+    def Save(Ent: UbigeoSaveModel):
         try:
-            return PersonaNaturalDB.Save(Ent)
+            return UbigeoDB.Save(Ent)
         except Exception as e:
             print(e)
     
     def GetItems():
         try:
-            return PersonaNaturalDB.GetItems()
+            return UbigeoDB.GetItems()
         except Exception as e:
             print(e)
     
     def GetItem(Id: int):
         try:
-            return PersonaNaturalDB.GetItem(Id)
+            return UbigeoDB.GetItem(Id)
         except Exception as e:
             print(e)
     
     def Delete(Id: int):
         try:
-            return PersonaNaturalDB.Delete(Id)
+            return UbigeoDB.Delete(Id)
         except Exception as e:
             print(e)
     

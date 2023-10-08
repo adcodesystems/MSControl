@@ -1,47 +1,47 @@
 from fastapi import APIRouter
-from BusinessLayer.PersonaNatural import *
-from EntityLayer.PersonaNaturalEntity import *
+from BusinessLayer.TipoSexo import *
+from EntityLayer.TipoSexoEntity import *
 from fastapi.encoders import jsonable_encoder
 from Utilidades.Entidades.ResponseAPI import ResponseAPI, ResponseAPIError
 
-PersonaNaturalRouter = APIRouter()
-ApiName = "PersonaNatural"
+TipoSexoRouter = APIRouter()
+ApiName = "TipoSexo"
 
 
-@PersonaNaturalRouter.post(f"/api/{ApiName}/Save", tags=[ApiName])
-def Save(Ent: PersonaNaturalSaveModel):
+@TipoSexoRouter.post(f"/api/{ApiName}/Save", tags=[ApiName])
+def Save(Ent: TipoSexoSaveModel):
     try:
-        Ent = PersonaNatural.Save(Ent)
+        Ent = TipoSexo.Save(Ent)
         return jsonable_encoder(ResponseAPI.Response(Ent))
     except Exception as e:
         print(e)
         return jsonable_encoder(ResponseAPIError.Error())
 
 
-@PersonaNaturalRouter.get(f"/api/{ApiName}/GetItems/", tags=[ApiName])
+@TipoSexoRouter.get(f"/api/{ApiName}/GetItems/", tags=[ApiName])
 def GetItems():
     try:
-        jsonData = PersonaNatural.GetItems()
+        jsonData = TipoSexo.GetItems()
         return jsonable_encoder(ResponseAPI.Response(jsonData))
     except Exception as e:
         print(e)
         return jsonable_encoder(ResponseAPIError.Error())
 
 
-@PersonaNaturalRouter.get(f"/api/{ApiName}/GetItem/{{Id}}/", tags=[ApiName])
+@TipoSexoRouter.get(f"/api/{ApiName}/GetItem/{{Id}}/", tags=[ApiName])
 def GetItem(Id: int):
     try:
-        jsonData = PersonaNatural.GetItem(Id)
+        jsonData = TipoSexo.GetItem(Id)
         return jsonable_encoder(ResponseAPI.Response(jsonData))
     except Exception as e:
         print(e)
         return jsonable_encoder(ResponseAPIError.Error())
 
 
-@PersonaNaturalRouter.delete(f"/api/{ApiName}/Delete/{{Id}}", tags=[ApiName])
+@TipoSexoRouter.delete(f"/api/{ApiName}/Delete/{{Id}}", tags=[ApiName])
 def Delete(Id: int):
     try:
-        jsonData = PersonaNatural.Delete(Id)
+        jsonData = TipoSexo.Delete(Id)
         return jsonable_encoder(ResponseAPI.Response(jsonData))
     except Exception as e:
         print(e)
