@@ -26,20 +26,23 @@
   </div>
 </div> -->
 
-<div class="container-fluid" >
+<div [style]="TipografiaEstilo" class="container-fluid" >
   <div class="row">
-    <div class="col-4">
-      <div class="col-12"  style="padding-bottom: 80px;">
-        <img src="../../../assets/logo.png" alt="Descripción de la imagen" height="100px;">
+    <div class="col-4" >
+      <!-- LOGO -->
+      <div class="col-10"  style="padding: 30px 0px 50px 0px;">
+        <img src="../../../assets/ADCODE-logo.jpg" alt="Descripción de la imagen" height="80px;">
       </div>
 
-      <div class="col-12" style="padding-left: 40px;">
+      <div class="col-10" style="padding-left: 40px;">
         <h3>¡Hola otra vez!</h3>
       </div>
-      <div class="col-12" style="padding-bottom: 30px; padding-left: 40px;">
+
+      <div class="col-10" style="padding-bottom: 30px; padding-left: 40px;">
         <span>Sign into your account</span>
       </div>
 
+      <!-- USUARIO -->
       <div class="col-10" style="padding-bottom: 10px; padding-left: 40px;">
         <div class="row">
           <span class="p-fluid">
@@ -48,8 +51,7 @@
           </span>
         </div>
       </div>
-
-
+      <!-- PASSWORD -->
       <div class="col-10" style="padding-bottom: 18px; padding-left: 40px;">
         <div class="row">
           <span class="p-fluid">
@@ -58,28 +60,25 @@
           </span>
         </div>
       </div>
-
-
-      <div class="col-10" style="padding-bottom: 24px; padding-left: 40px;">
+      <!-- BUTTON INICIAR SESION -->
+      <div class="col-10" style="padding-left: 28px;">
         <div class="row">
-          <button type="submit" pButton class="p-mt-9 p-text-center" style="background-color: #00265c;">
-            Iniciar Sesión
-          </button>
+          <span class="p-fluid">
+            <button [style]="ButtonIniciarSesion" pButton type="button" label="Iniciar Sesión"></button>
+            <!-- <button [style]="TipografiaEstilo" type="button" class="btn btn-primary btn-block">Botón</button> -->
+          </span>
         </div>
       </div>
-
-
-
     </div>
+
+
     <div class="col-8">
       <div class="row">
-        <div class="col-9" style="height: 100vh; background: rgb(0,76,175);
-        background: linear-gradient(90deg, rgba(0,76,175,1) -1%, rgba(0,38,92,1) 0%, rgba(0,57,126,1) 10%, rgba(0,76,175,1) 20%, rgba(0,91,218,1) 36%, rgba(0,102,255,1) 53%, rgba(55,135,255,1) 73%, rgba(25,93,185,1) 90%, rgba(0,57,126,1) 96%, rgba(0,38,92,1) 100%); height: 100vh; border-bottom-left-radius: 70px; border-top-left-radius: 70px;">
-
-        </div>
-        <div class="col-3" style="height: 100vh; background: rgb(255,255,255);
-        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(247,250,255,1) 10%, rgba(229,240,255,1) 50%, rgba(0,102,255,1) 85%, rgba(0,38,92,1) 100%);">
-
+        <div class="col-12" style="background: rgb(0,76,175);
+            background: linear-gradient(90deg, rgba(0,76,175,1) -1%, rgba(0,38,92,1) 0%,
+           rgba(0,57,126,1) 10%, rgba(0,76,175,1) 20%, rgba(0,91,218,1) 36%, rgba(0,102,255,1) 53%,
+           rgba(55,135,255,1) 73%, rgba(25,93,185,1) 90%, rgba(0,57,126,1) 96%, rgba(0,38,92,1) 100%); 
+           height: 90vh; border-bottom-left-radius: 50px; border-top-left-radius: 50px;">
         </div>
       </div>
     </div>
