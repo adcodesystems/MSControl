@@ -29,9 +29,10 @@ export class PersonaNaturalMainComponent {
   async GetAllItems() {
     try {
       this.showSpinner = true;
+      
       const dat = await this.personanaturalServiceService.GetItems();
       this.ListaMainItems = dat;
-      console.log(dat);
+
       this.showSpinner = false;
     } catch (error) {
       // console.error(error);

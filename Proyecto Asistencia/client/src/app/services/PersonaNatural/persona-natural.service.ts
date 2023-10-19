@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { PersonaNaturalSaveModel,PersonaNaturalMainModel } from '../../models/PersonaNaturalEntity'
 import { apiGeneral } from '../axios-config';
 
@@ -27,23 +26,6 @@ export class PersonaNaturalService {
       return [];
     }
   }
-
-
-
-  // async saveItem(item: PersonaNaturalSaveModel): Promise<PersonaNaturalSaveModel> {
-  //   try {
-  //     const response = await apiGeneral.post(`api/PersonaNatural/Save`, item, {
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //     });
-
-  //       return response.data.Value;
-  //   } catch (error) {
-  //     console.log(error);
-  //     return new PersonaNaturalSaveModel();
-  //   }
-  // }
 
 
   async saveItem(item: PersonaNaturalSaveModel): Promise<PersonaNaturalSaveModel> {

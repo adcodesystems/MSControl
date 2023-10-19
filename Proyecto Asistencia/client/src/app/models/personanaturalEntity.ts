@@ -1,7 +1,4 @@
 export class PersonaNaturalMainModel {
-
-
-    
     constructor(
         public Item : number=0,
         public PersonaNaturalId: number = 0,
@@ -14,7 +11,6 @@ export class PersonaNaturalMainModel {
         public CodUsuario: string = ''
     ) { }
 }
-
 
 export class PersonaNaturalSaveModel {
     constructor(
