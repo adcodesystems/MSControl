@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { ButtonLoginStyles } from '../../../app/models/StylesPrime';
+
+
 import { ColoresPrincipales, ColoresSecundarios ,ColoresGrises } from '../../../app/styles/colors';
 import { Tipografias} from '../../../app/styles/fonts';
 
@@ -10,6 +12,7 @@ import { Tipografias} from '../../../app/styles/fonts';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent {
   username: string = '';
   password: string = '';
