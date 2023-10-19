@@ -19,7 +19,6 @@ export class GeneralService {
       query: `
       {GHTipoDocumentoIdentidadeItems {TipoDocumentoIdentidadId Alias}}`,
     });
-    console.log(response.data.data.GHTipoDocumentoIdentidadeItems);
     return await response.data.data.GHTipoDocumentoIdentidadeItems
   }
 
