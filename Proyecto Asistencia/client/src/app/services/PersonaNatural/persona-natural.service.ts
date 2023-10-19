@@ -1,46 +1,64 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { PersonaNaturalSaveModel } from '../../models/PersonaNatural/PersonaNaturalSaveModel'
-import { PersonaNaturalMainModel } from '../../models/PersonaNatural/PersonaNaturalMainModel'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { PersonaNaturalSaveModel,PersonaNaturalMainModel } from '../../models/PersonaNaturalEntity'
+import { apiGeneral } from '../axios-config';
 
-import { Observable } from 'rxjs/internal/Observable';
-import { PersonaNaturalMedioComunicacionSaveModel } from '../../models/PersonaNatural/PersonaNaturalMedioComunicacionSaveModel';
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaNaturalService {
 
-  API_URI = 'http://localhost:8080';
+  constructor() { }
 
-
-  constructor(private http: HttpClient) { }
-
-  GetAllItems(): Observable<PersonaNaturalSaveModel[]> {
-    return this.http.get<PersonaNaturalSaveModel[]>(`${this.API_URI}/api/PersonaNatural/GetAllItems`);
+  async GetItems(): Promise<PersonaNaturalMainModel[]> {
+    try {
+      const response = await apiGeneral.get(`api/PersonaNatural/GetItems`)
+      return response.data.Value;
+    } catch (err) {
+      return [];
+    }
   }
 
-  GetAllItem(id: number): Observable<PersonaNaturalSaveModel[]> {
-    return this.http.get<PersonaNaturalSaveModel[]>(`${this.API_URI}/api/PersonaNatural/GetAllItem/${id}`);
+  async GetItem(id: number): Promise<PersonaNaturalSaveModel[]> {
+    try {
+      const response = await apiGeneral.get(`api/PersonaNatural/GetItem/${id}`)
+      return response.data.Value;
+    } catch (err) {
+      return [];
+    }
   }
 
 
-  save(item: PersonaNaturalSaveModel): Observable<PersonaNaturalSaveModel> {
-    return this.http.post<PersonaNaturalSaveModel>(`${this.API_URI}/api/PersonaNatural/Save`, item);
-  }
-  delete(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.API_URI}/api/PersonaNatural/Delete/${id}`);
-  }
 
-  GetPersonaNaturalMainItems(): Observable<PersonaNaturalMainModel[]> {
-    return this.http.get<PersonaNaturalMainModel[]>(`${this.API_URI}/api/PersonaNatural/GetPersonaNaturalMainItems`);
-  }
+  // async saveItem(item: PersonaNaturalSaveModel): Promise<PersonaNaturalSaveModel> {
+  //   try {
+  //     const response = await apiGeneral.post(`api/PersonaNatural/Save`, item, {
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     });
 
-  GetMedioComunicacionDetalle(id: number): Observable<PersonaNaturalMedioComunicacionSaveModel[]> {
-    return this.http.get<PersonaNaturalMedioComunicacionSaveModel[]>(`${this.API_URI}/api/PersonaNatural/GetMedioComunicacionDetalle/${id}`);
-  }
-  GetMedioComunicacionDetalleAlle(id: number): Observable<PersonaNaturalMedioComunicacionSaveModel[]> {
-    return this.http.get<PersonaNaturalMedioComunicacionSaveModel[]>(`${this.API_URI}/api/PersonaNatural/GetMedioComunicacionDetalle/${id}`);
-  }
+  //       return response.data.Value;
+  //   } catch (error) {
+  //     console.log(error);
+  //     return new PersonaNaturalSaveModel();
+  //   }
+  // }
 
+
+  async saveItem(item: PersonaNaturalSaveModel): Promise<PersonaNaturalSaveModel> {
+    try {
+      const response = await apiGeneral.post(`api/PersonaNatural/Save`, item, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      return response.data.Value;
+    } catch (error) {
+      throw error; 
+    }
+  }
+  
 
 }

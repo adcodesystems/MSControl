@@ -48,3 +48,11 @@ def Delete(Id: int):
         return jsonable_encoder(ResponseAPIError.Error())
 
 
+@UbigeoRouter.get(f"/api/{ApiName}/GetItemLIke/{{Nombre}}/", tags=[ApiName])
+def GetItemLIke(Nombre: str):
+    try:
+        jsonData = Ubigeo.GetItemLike(Nombre)
+        return jsonable_encoder(ResponseAPI.Response(jsonData))
+    except Exception as e:
+        print(e)
+        return jsonable_encoder(ResponseAPIError.Error())

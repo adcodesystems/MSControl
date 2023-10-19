@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { PersonaNaturalService } from '../../../services/PersonaNatural/persona-natural.service';
-import { PersonaNaturalMainModel } from '../../../models/PersonaNatural/PersonaNaturalMainModel';
-import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
+import { PersonaNaturalMainModel } from '../../../models/PersonaNaturalEntity';
 import { ButtonStyles } from '../../../models/StylesPrime';
 import { Router } from '@angular/router';
 @Component({
@@ -28,19 +27,20 @@ export class PersonaNaturalMainComponent {
   }
 
   async GetAllItems() {
-    this.showSpinner = true;
-    await this.personanaturalServiceService.GetPersonaNaturalMainItems().subscribe(
-      respuesta => {
-        this.ListaMainItems = respuesta;
-        this.GetlistaOrdenar();
-        this.showSpinner = false;
-      }
-    )
+    try {
+      this.showSpinner = true;
+      const dat = await this.personanaturalServiceService.GetItems();
+      this.ListaMainItems = dat;
+      console.log(dat);
+      this.showSpinner = false;
+    } catch (error) {
+      // console.error(error);
+      this.showSpinner = false;
+    }
 
   }
   async GetlistaOrdenar() {
     await this.ListaMainItems.sort((a, b) => b.PersonaNaturalId - a.PersonaNaturalId);
-
     await this.ListaMainItems.forEach((cargo, index) => {
       cargo.Item = index + 1;
     });

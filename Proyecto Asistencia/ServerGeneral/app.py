@@ -13,8 +13,7 @@ app = FastAPI(
     description="Sistema logistico  ",
 )
 origins = [
-    "http://localhost:5042",
-    "http://localhost:3000",
+    "http://localhost:4200",
 ]
 app.add_middleware(
     CORSMiddleware,

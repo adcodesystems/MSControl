@@ -27,3 +27,8 @@ class Ubigeo:
         except Exception as e:
             print(e)
     
+    def GetItemLike(Nombre: str):
+        try:
+            return UbigeoDB.GetItemLike(Nombre)
+        except Exception as e:
+            print(e)

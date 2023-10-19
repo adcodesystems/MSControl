@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CargoEntity } from '../../models/Cargo/CargoEntity'
+import { CargoEntity } from '../../models/CargoEntity'
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({

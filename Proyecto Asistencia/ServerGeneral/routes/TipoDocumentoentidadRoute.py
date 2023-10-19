@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from BusinessLayer.TipoDocumentoentidad import *
-from EntityLayer.TipoDocumentoentidadEntity import *
+from BusinessLayer.TipoDocumentoIdentidad import *
+from EntityLayer.TipoDocumentoIdentidadEntity import *
 from fastapi.encoders import jsonable_encoder
 from Utilidades.Entidades.ResponseAPI import ResponseAPI, ResponseAPIError
 
@@ -9,9 +9,9 @@ ApiName = "TipoDocumentoentidad"
 
 
 @TipoDocumentoentidadRouter.post(f"/api/{ApiName}/Save", tags=[ApiName])
-def Save(Ent: TipoDocumentoentidadSaveModel):
+def Save(Ent: TipoDocumentoIdentidadSaveModel):
     try:
-        Ent = TipoDocumentoentidad.Save(Ent)
+        Ent = TipoDocumentoIdentidad.Save(Ent)
         return jsonable_encoder(ResponseAPI.Response(Ent))
     except Exception as e:
         print(e)
@@ -21,7 +21,7 @@ def Save(Ent: TipoDocumentoentidadSaveModel):
 @TipoDocumentoentidadRouter.get(f"/api/{ApiName}/GetItems/", tags=[ApiName])
 def GetItems():
     try:
-        jsonData = TipoDocumentoentidad.GetItems()
+        jsonData = TipoDocumentoIdentidad.GetItems()
         return jsonable_encoder(ResponseAPI.Response(jsonData))
     except Exception as e:
         print(e)
@@ -31,7 +31,7 @@ def GetItems():
 @TipoDocumentoentidadRouter.get(f"/api/{ApiName}/GetItem/{{Id}}/", tags=[ApiName])
 def GetItem(Id: int):
     try:
-        jsonData = TipoDocumentoentidad.GetItem(Id)
+        jsonData = TipoDocumentoIdentidad.GetItem(Id)
         return jsonable_encoder(ResponseAPI.Response(jsonData))
     except Exception as e:
         print(e)
@@ -41,7 +41,7 @@ def GetItem(Id: int):
 @TipoDocumentoentidadRouter.delete(f"/api/{ApiName}/Delete/{{Id}}", tags=[ApiName])
 def Delete(Id: int):
     try:
-        jsonData = TipoDocumentoentidad.Delete(Id)
+        jsonData = TipoDocumentoIdentidad.Delete(Id)
         return jsonable_encoder(ResponseAPI.Response(jsonData))
     except Exception as e:
         print(e)

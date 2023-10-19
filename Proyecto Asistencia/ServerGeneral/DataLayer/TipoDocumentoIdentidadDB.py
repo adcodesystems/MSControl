@@ -2,11 +2,11 @@ from Utilidades.Entidades.ResponseAPI import ResponseAPIError
 from Utilidades.Entidades.ResponseAPI import ResponseAPI
 from Utilidades.Arreglos.ListError import error_entities
 from .configMysql import get_connection
-from EntityLayer.TipoDocumentoentidadEntity import *
+from EntityLayer.TipoDocumentoIdentidadEntity import *
 import pymysql
 
 
-class TipoDocumentoentidadDB:
+class TipoDocumentoIdentidadDB:
     def GetItems():
         try:
             conn = get_connection()
@@ -18,7 +18,7 @@ class TipoDocumentoentidadDB:
             list = []
 
             for row in resulset:
-                Data_ent = TipoDocumentoentidadItemModel.Cargar(row)
+                Data_ent = TipoDocumentoIdentidadItemModel.Cargar(row)
                 list.append(Data_ent)
             return list
         except Exception as e:
@@ -35,14 +35,15 @@ class TipoDocumentoentidadDB:
             conn.close()
             list = []
 
+            print(resulset)
             for row in resulset:
-                Data_ent = TipoDocumentoentidadItemModel.Cargar(row)
+                Data_ent = TipoDocumentoIdentidadItemModel.Cargar(row)
                 list.append(Data_ent)
             return list
         except Exception as e:
             print(e)
 
-    def Save(Ent: TipoDocumentoentidadSaveModel):
+    def Save(Ent: TipoDocumentoIdentidadSaveModel):
         try:
             Store: str
             Store = "sp_TipoDocumentoentidad_Save"

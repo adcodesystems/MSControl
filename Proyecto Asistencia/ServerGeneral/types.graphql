@@ -17,7 +17,7 @@ type PersonaNaturalItemModel {
     EstadoRegistro: Boolean
 }
 
-type TipoDocumentoIdentidadSaveModel {
+type TipoDocumentoIdentidad_GQL {
     TipoDocumentoIdentidadId: Int
     Codigo: String
     Alias : String
@@ -27,10 +27,33 @@ type TipoDocumentoIdentidadSaveModel {
 
 
 
+type TipoSexo_GQL {
+    TipoSexoId: Int
+    Nombre: String
+}
 
 
+
+type TipoEstadoCivil_GQL {
+    EstadoCivilId: Int
+    Nombre: String
+}
+
+
+type Ubigeo_GQL {
+    UbigeoId: Int
+    CodUbigeo: String
+    DesUbigeo: String
+}
 
 type Query {
     GHPersonaNaturals: [PersonaNaturalItemModel]
-    GHTipoDocumentoIdentidades :[TipoDocumentoIdentidadSaveModel]
+    GHTipoDocumentoIdentidadeItems :[TipoDocumentoIdentidad_GQL]
+    GHTipoDocumentoIdentidadeItem(Id: Int) :[TipoDocumentoIdentidad_GQL]
+    GHTipoSexoItems :[TipoSexo_GQL]
+    GHTipoSexoItem(Id: Int) :[TipoSexo_GQL]
+    GHEstadoCivilItems :[TipoEstadoCivil_GQL]
+    GHEstadoCivilItem(Id: Int) :[TipoEstadoCivil_GQL]
+    GHGetUbigeoItemLike(Nombre: String) :[Ubigeo_GQL]
+    GHGetUbigeoItem(Id: Int) :[Ubigeo_GQL]
 }

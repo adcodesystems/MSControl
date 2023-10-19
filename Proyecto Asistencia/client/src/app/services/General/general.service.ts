@@ -1,48 +1,80 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { TipoDocumentoIdentidadItemModel } from '../../models/General/TipoDocumentoIdentidadItemModel'
-import { UbigeoItemModel } from '../../models/General/UbigeoItemModel'
-import { GeneroItemModel } from '../../models/General/GeneroItemModel'
-import { EstadoCivilItemModel } from '../../models/General/EstadoCivilItemModel'
-import { Observable } from 'rxjs/internal/Observable';
-import { MedioComunicacionItemModel } from '../../models/General/MedioComunicacionItemModel';
+import { apiGeneral } from '../axios-config';
+import {
+  TipoDocumentoIdentidadItemModel,
+  EstadoCivilItemModel,
+  TipoSexoItemModel,
+  UbigeoItemModel
+} from '../../models/GeneralEntity';
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralService {
 
-  API_URI = 'http://localhost:8080';
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  GetTipoDocuemntoIdentidadPersonaItems(): Observable<TipoDocumentoIdentidadItemModel[]> {
-    return this.http.get<TipoDocumentoIdentidadItemModel[]>(`${this.API_URI}/api/General/GetTipoDocuemntoIdentidadPersonaItems`);
-  }
-  GetUbigeoLikeItem(Nombre: string): Observable<UbigeoItemModel[]> {
-    return this.http.get<UbigeoItemModel[]>(`${this.API_URI}/api/General/GetUbigeoLikeItem/${Nombre}`);
-  }
-  GetUbigeoItem(Id: number): Observable<UbigeoItemModel[]> {
-    return this.http.get<UbigeoItemModel[]>(`${this.API_URI}/api/General/GetUbigeoItem/${Id}`);
+  async GetTipoDocuemntoIdentidadItems(): Promise<TipoDocumentoIdentidadItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `
+      {GHTipoDocumentoIdentidadeItems {TipoDocumentoIdentidadId Alias}}`,
+    });
+    console.log(response.data.data.GHTipoDocumentoIdentidadeItems);
+    return await response.data.data.GHTipoDocumentoIdentidadeItems
   }
 
-  GetGeneroItems(): Observable<GeneroItemModel[]> {
-    return this.http.get<GeneroItemModel[]>(`${this.API_URI}/api/General/GetGeneroItems`);
+  async GetTipoDocuemntoIdentidadItem(Id: number): Promise<TipoDocumentoIdentidadItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `{ GHTipoDocumentoIdentidadeItem(Id: ${Id}) {TipoDocumentoIdentidadId Alias}}`,
+    });
+    return await response.data.data.GHTipoDocumentoIdentidadeItem
   }
 
-  GetGeneroItem(Id: number): Observable<GeneroItemModel[]> {
-    return this.http.get<GeneroItemModel[]>(`${this.API_URI}/api/General/GetGeneroItem/${Id}`);
+  async GetTipoSexoItems(): Promise<TipoSexoItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `{GHTipoSexoItems { TipoSexoId  Nombre} }`,
+    });
+    return await response.data.data.GHTipoSexoItems
   }
 
-  GetEstadoCivilItems(): Observable<EstadoCivilItemModel[]> {
-    return this.http.get<EstadoCivilItemModel[]>(`${this.API_URI}/api/General/GetEstadoCivilItems`);
+  async GetTipoSexoItem(Id: number): Promise<TipoSexoItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `{GHTipoSexoItem(Id: ${Id}) { TipoSexoId  Nombre} }`,
+    });
+    return await response.data.data.GHTipoSexoItem
   }
 
-  GetEstadoCivilItem(Id: number): Observable<EstadoCivilItemModel[]> {
-    return this.http.get<EstadoCivilItemModel[]>(`${this.API_URI}/api/General/GetEstadoCivilItem/${Id}`);
+
+  async GetTipoEstadoCivilItems(): Promise<EstadoCivilItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `{GHEstadoCivilItems {EstadoCivilId Nombre}}`,
+    });
+    return await response.data.data.GHEstadoCivilItems
   }
 
-  GetMedioComunicacionItems(): Observable<MedioComunicacionItemModel[]> {
-    return this.http.get<MedioComunicacionItemModel[]>(`${this.API_URI}/api/General/GetMedioComunicacionItems`);
+
+  async GetTipoEstadoCivilItem(Id: number): Promise<EstadoCivilItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `{GHEstadoCivilItem(Id: ${Id})  {EstadoCivilId Nombre}}`,
+    });
+    return await response.data.data.GHEstadoCivilItem
   }
+
+
+  async GetUbigeoItemLike(Nombre: string): Promise<UbigeoItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `{
+        GHGetUbigeoItemLike(Nombre: "${Nombre}") {UbigeoId DesUbigeo}}`,
+    });
+    return await response.data.data.GHGetUbigeoItemLike;
+  }
+
+  async GetUbigeoItem(Id: number): Promise<UbigeoItemModel[]> {
+    const response = await apiGeneral.post('gql/General', {
+      query: `{GHGetUbigeoItem (Id: ${Id})  {UbigeoId DesUbigeo}}`,
+    });
+    return await response.data.data.GHGetUbigeoItem
+  }
+
 
 }

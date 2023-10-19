@@ -94,3 +94,21 @@ class UbigeoDB:
             cursor.close()
             conn.close()
 
+
+    def GetItemLike(Nombre: str):
+        try:
+            conn = get_connection()
+            with conn.cursor() as cursor:
+                cursor = conn.cursor(pymysql.cursors.DictCursor)
+                args = (Nombre,)
+                cursor.callproc("sp_Ubigeo_ItemsLike", args)
+                resulset = cursor.fetchall()
+            conn.close()
+            list = []
+
+            for row in resulset:
+                Data_ent = UbigeoItemModel.CargarLIke(row)
+                list.append(Data_ent)
+            return list
+        except Exception as e:
+            print(e)

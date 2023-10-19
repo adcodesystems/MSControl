@@ -7,7 +7,6 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TipoElementoMainComponent } from './components/tipo-elemento-main/tipo-elemento-main.component';
 
 import { SidebarMenuComponent } from './components/Menu/sidebar-menu/sidebar-menu.component';
 import { NavigationComponent } from './components/Menu/navigation/navigation.component';
@@ -28,10 +27,8 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { SidebarModule } from 'primeng/sidebar';
-import { PisoMainComponent } from './components/piso-main/piso-main.component';
 
 import { InputSwitchModule } from 'primeng/inputswitch';
-import { ServicioBasicoMainComponent } from './components/servicio-basico-main/servicio-basico-main.component';
 import { TabViewModule } from 'primeng/tabview';
 import { PersonaNaturalSaveComponent } from './components/PersonaNatural/persona-natural-save/persona-natural-save.component';
 import { PersonaNaturalMainComponent } from './components/PersonaNatural/persona-natural-main/persona-natural-main.component';
@@ -40,23 +37,16 @@ import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { LoginComponent } from './components/login/login.component';
-import { InfraestructuraMainComponent } from './components/Infraestructura/infraestructura-main/infraestructura-main.component';
-import { InfraestructuraSaveComponent } from './components/Infraestructura/infraestructura-save/infraestructura-save.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 @NgModule({
   declarations: [
     AppComponent,
-    TipoElementoMainComponent,
     SidebarMenuComponent,
     NavigationComponent,
     CargoMainComponent,
-    PisoMainComponent,
-    ServicioBasicoMainComponent,
     PersonaNaturalSaveComponent,
     PersonaNaturalMainComponent,
     LoginComponent,
-    InfraestructuraSaveComponent,
-    InfraestructuraMainComponent
   ],
   imports: [
     InputNumberModule,
