@@ -5,6 +5,7 @@ import { ButtonLoginStyles } from '../../../app/models/StylesPrime';
 
 
 import { ColoresPrincipales, ColoresSecundarios ,ColoresGrises } from '../../../app/styles/colors';
+
 import { Tipografias} from '../../../app/styles/fonts';
 
 @Component({
@@ -22,6 +23,7 @@ export class LoginComponent {
   /*ESTILOS*/
   ButtonIniciarSesion = ColoresPrincipales.ad_cp2;
   TipografiaEstilo = Tipografias.ad_tip1;
+  
 
   login() {
     if (this.autenticacionExitosa) {
