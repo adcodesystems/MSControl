@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { PersonaNaturalService } from '../../../services/PersonaNatural/persona-natural.service';
 import { PersonaNaturalMainModel } from '../../../models/PersonaNaturalEntity';
-import { ButtonStyles } from '../../../models/StylesPrime';
+import { Tipografias} from '../../../../app/styles/fonts';
+
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-persona-natural-main',
@@ -10,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class PersonaNaturalMainComponent {
 
-  buttonStyle = ButtonStyles.primary;
   visibleVentena: boolean = false;
   loading: boolean = true;
   cities: PersonaNaturalMainModel[] | undefined;
@@ -18,6 +18,8 @@ export class PersonaNaturalMainComponent {
   ListaMainItems: PersonaNaturalMainModel[] = [];
   selectedItems!: PersonaNaturalMainModel[] | null;
   showSpinner: boolean = false;
+
+  TipografiaEstilo = Tipografias.ad_tip1;
   constructor(private router: Router, private personanaturalServiceService: PersonaNaturalService) {
   }
   async ngOnInit() {

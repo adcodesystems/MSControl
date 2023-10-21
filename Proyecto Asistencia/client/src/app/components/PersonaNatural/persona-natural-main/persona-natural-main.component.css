@@ -5,3 +5,25 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+
+#HeaderTablaColor{
+  background-color: #00265C;
+  color: #FFF;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+.ad_btnMain {
+    background: #F3F3F3;
+    color: #060606;
+    border: 0px;
+    border-radius: 8px;
+    font-size: 14px;
+  };
+
+
+  .ad_btnMain :hover {
+    background: red;
+  };

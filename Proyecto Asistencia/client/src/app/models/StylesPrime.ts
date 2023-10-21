@@ -1,12 +1,11 @@
 export class ButtonStyles {
   static primary = {
-    color: '#027FAB'
+    background: '#027FAB',
+    color: '#FFF'
   };
 
 
-  static primaryCancelar = {
-    color: '#027FAB'
-  };
+
 }
 
 export class ButtonLoginStyles {
