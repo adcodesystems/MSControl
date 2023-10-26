@@ -4,6 +4,7 @@ import { PersonaNaturalMainModel } from '../../../models/PersonaNaturalEntity';
 import { Tipografias} from '../../../../app/styles/fonts';
 
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-persona-natural-main',
   templateUrl: './persona-natural-main.component.html',
@@ -20,6 +21,7 @@ export class PersonaNaturalMainComponent {
   showSpinner: boolean = false;
 
   TipografiaEstilo = Tipografias.ad_tip1;
+
   constructor(private router: Router, private personanaturalServiceService: PersonaNaturalService) {
   }
   async ngOnInit() {

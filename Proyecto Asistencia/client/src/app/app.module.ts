@@ -38,6 +38,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { LoginComponent } from './components/login/login.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     StyleClassModule,
     CardModule,
     PanelModule, ImageModule, CalendarModule, DropdownModule, AutoCompleteModule, ProgressSpinnerModule,
-
+    AvatarModule,AvatarGroupModule,
     ConfirmDialogModule, ConfirmPopupModule, ToolbarModule, ToastModule, PanelMenuModule, SidebarModule, InputSwitchModule],
   providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent],
